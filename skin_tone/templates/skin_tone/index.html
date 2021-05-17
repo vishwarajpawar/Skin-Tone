@@ -9,8 +9,6 @@
 {% block head %}
 
 <style>
-  
-
   .btns {
     color: rgb(144, 33, 167);
     text-align: center;
@@ -96,7 +94,7 @@
                 <button type="submit" class="btns fa-pull-right">Submit</button>
               </div>
             </div>
-            
+
             <br>
             {% if messages %}
             {% for message in messages %}
@@ -116,24 +114,26 @@
             </div>
         </form>
       </div>
-     <br>
-
-<h4 style="color: white;">Preview: </h4>
-<br>
-      {% if image %}
-      <div class=" d-flex justify-content-center align-items-center" >
-      <img src=" {{ image.image.url }}" alt="img" class="image" width="200" height="300">
-      {% endif %}
-      </div>
+      <br>
 
       
-      <br><br>
+      <br>
+      {% if image %}
+      <h4 style="color: white;">Preview: </h4>
+      <div class=" d-flex justify-content-center align-items-center">
+        <img src=" {{ image.image.url }}" alt="img" class="image" width="200" height="300">
+        {% endif %}
+      </div>
 
+
+      <br><br>
+      {% if image %}
       <div class=" d-flex justify-content-center" style="margin-top:50px;">
         <form action="output/" method="POST">
           {% csrf_token %}
           <button type="submit" class="btns btn-lg "> Detect</button>
         </form>
+        {% endif %}
       </div>
 
     </section>
