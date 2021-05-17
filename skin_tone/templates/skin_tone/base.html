@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Satisfy|Philosopher" />
+  <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+
+
+  <title>{% block title %} {% endblock %}</title>
+  {% block head %} {% endblock %}
+</head>
+
+<body>
+
+  
+  {% block content %}
+
+  {% endblock %}
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+
+  <footer class="page-footer font-small " style="margin: 0;">
+    <div style="background-color: yellow;">
+
+      <div class="foot" style="padding-top: 3%; padding-bottom: 1%;">
+        <div class="container mt-1 mb-5 text-center text-md-left  font-weight-light">
+          <div>
+            Human skin detection is an essential phase in face detection and face recognition
+            when using color images uploading it using a button . Skin detection is very challenging because of
+            the differences in illumination, differences in photos taken using an assortment of cameras with their
+            own characteristics, range of skin colors due to different ethnicities, and other variations. Then to
+            detect it and publishing the result from serverside to the clientside with the selected image and it’s
+            category using Django framework.
+            <br>
+            <hr>
+            <br>
+            <div>
+              The Project Developed by Group of 30 Intrens from the Verzeo's Intrenship program.
+              where people from Web development, Machine Learing, AI, and Deep Learing where Contributed.
+              Under the supervison of Project supervior of the Verzeo.
+            </div>
+          </div>
+          <hr>
+          <div class="row mt-4">
+            <div class="col-md-4 col-lg-4 col-xl-4  ">
+              <h4 style="font-family: Philosopher;">
+                Skin Tone Detection
+              </h4>
+              <p>web portal to detect the skin tone (i.e., Fair, Mild or Dark) from a human face image.</p>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-xl-4  ">
+              <h4 style="font-family: Philosopher;">
+                Verzeo EduTech
+              </h4>
+              <p>Verzeo is an AI-Based online learning platform offering students a holistic learning experience, help
+                them become Industry ready.</p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4  ">
+              <h4 style="font-family: Philosopher;">
+                Declaration:
+              </h4>
+              <p>All right reserved to the Dummies who worked on this project with the goal to apply and learn some hard
+                thing above there experiance </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

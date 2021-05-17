@@ -1,0 +1,34 @@
+{% extends 'skin_tone/base.html' %}
+{% load static %}
+{% block title %} Skin Tone {% endblock %}
+
+{% block content %} 
+<div class="jumbotron jumbotron-fluid py-4 mb-5 bg-dark  text-white  " 
+style="background: linear-gradient(to left bottom, #845EC2, #D65DB1, #FF6F91, #FF9671, #FFC75F, #F9F871);;">
+  <div class="container">
+    <h2 class="display-5 " style=" font-family: Philosopher; " >HUMAN SKIN TONE DETECTION</h2>
+    <p class="lead">Skin tone Detected</p>
+    <hr class="my-2">
+    <p class="lead">
+      <a class="btn btns"href="{% url 'index' %}" role="button" style="width: fit-content;">Back to Home</a>
+    </p>
+  </div>
+</div>
+
+<main style="  margin: 50px auto ;">
+
+<section class="box shadow-lg p-5 mb-5"> 
+  {% if img %}
+      <h4 class="text-white">Overview: </h4> 
+      <div class="d-flex justify-content-md-center align-items-center">
+      <img src=" {{ img.image.url }}" alt="img" class="image mt-5"  width="300" height="500">
+      </div>
+      {% endif %}
+      
+</section>
+
+</main>
+
+
+
+{% endblock %}  

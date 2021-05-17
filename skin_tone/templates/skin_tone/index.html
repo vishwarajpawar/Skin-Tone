@@ -1,0 +1,150 @@
+{% extends 'skin_tone/base.html' %}
+{% load static %}
+
+
+
+{% block title %} Skin Tone {% endblock %}
+
+
+{% block head %}
+
+<style>
+  
+
+  .btns {
+    color: rgb(144, 33, 167);
+    text-align: center;
+    height: 39px;
+    width: 100px;
+    border: 2px solid rgb(144, 33, 167);
+    padding-top: 1px;
+    border-radius: 10px;
+
+  }
+
+  .btns:hover {
+    background-color: rgb(144, 33, 167);
+    color: white;
+    border: 2px solid white;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<header style="background-color: rgba(0, 0, 0,0.2);">
+
+  <div id="intro" class="view">
+
+    <div class="">
+
+      <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+
+        <div class="row d-flex justify-content-center text-center ">
+
+          <div class=" col-md-10">
+
+            <h2 class="display-4 font-weight-bold  text-white pt-5 mb-2 h2-clasi">HUMAN SKIN TONE DETECTION</h2>
+
+            <hr class="hr-light">
+
+
+            <p class="text-white  my-4" style=" font-family: Philosopher; font-size: 35px">web portal to detect the
+              skin
+              tone (i.e., Fair, Mild or Dark) from a human
+              face image.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<main style="  margin: 50px auto ;">
+
+
+  <div class="container ">
+
+    <section id="features" class="  box shadow-lg p-5 mb-2 d"
+      style=" background-image: linear-gradient(rgb(113, 24, 230),rgb(211, 18, 236));">
+
+
+
+      <div style="margin-top: 50px;">
+        <form action="" method="POST" enctype="multipart/form-data">
+
+          <div class="mb-3">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="formFile" class="form-label" name="img" style="color: white;">Choose your file for the skin
+                detection:</label>
+              <input class="form-control" type="file" id="formFile" name="img" required>
+
+
+            </div>
+            <div class="row">
+              <div class="col text-left">
+                <button type="reset" class="btns">Reset</button>
+              </div>
+              <div class="col text-left">
+                <button type="submit" class="btns fa-pull-right">Submit</button>
+              </div>
+            </div>
+            
+            <br>
+            {% if messages %}
+            {% for message in messages %}
+
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              {{ message }}
+            </div>
+
+            {% endfor %}
+            {% endif %}
+            <br>
+            <p style="color: white;">Take your image for the skin detection:</p>
+            <div class="row">
+              <button type="reset" class="btns col-lg-2">Capture</button>
+            </div>
+        </form>
+      </div>
+     <br>
+
+<h4 style="color: white;">Preview: </h4>
+<br>
+      {% if image %}
+      <div class=" d-flex justify-content-center align-items-center" >
+      <img src=" {{ image.image.url }}" alt="img" class="image" width="200" height="300">
+      {% endif %}
+      </div>
+
+      
+      <br><br>
+
+      <div class=" d-flex justify-content-center" style="margin-top:50px;">
+        <form action="output/" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btns btn-lg "> Detect</button>
+        </form>
+      </div>
+
+    </section>
+
+
+  </div>
+  </div>
+</main>
+
+
+
+
+
+{% endblock %}
