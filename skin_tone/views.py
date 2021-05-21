@@ -4,10 +4,14 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 from django.contrib import messages
 import os
+from matplotlib import pyplot as plt
+from .predictions import plot_image
 
+from imutils import paths
+import cv2
 
-
-
+import base64
+from io import BytesIO 
 
 from .models import InputImg
 
@@ -67,10 +71,23 @@ def index(request):
 
     return render(request, 'skin_tone/index.html', {})        
 
+
+
+
+
+
 def output(request):
 
     if request.method == 'POST':
         #print(url)
         #img = url[0]
         img =  InputImg.objects.all().first()
-        return render(request, 'skin_tone/output.html', {'img':img})
+      
+        img_list=list(paths.list_images('skin_tone/input/'))
+        print(img_list)
+        image = cv2.imread(img_list[0])
+
+        plt,skinTone = plot_image(image)
+
+        print(skinTone)
+        return render(request, 'skin_tone/output.html', {'img':img, 'skinTone':skinTone, 'plt':plt})

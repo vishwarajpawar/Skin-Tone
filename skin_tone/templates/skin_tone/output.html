@@ -19,9 +19,17 @@ style="background: linear-gradient(to left bottom, #845EC2, #D65DB1, #FF6F91, #F
 
 <section class="box shadow-lg p-5 mb-5"> 
   {% if img %}
-      <h4 class="text-white">Overview: </h4> 
-      <div class="d-flex justify-content-md-center align-items-center">
+  <h4 class="text-white">Overview: </h4>
+  <div class="row d-flex align-items-center justify-content-center" style="margin-top :150px;">
+      <div class="col d-flex align-items-center justify-content-center">
+      <h2  class="text-white"> Skin Tone: {{ skinTone }}</h2>
+      </div>
+      <div class="col">
       <img src=" {{ img.image.url }}" alt="img" class="image mt-5"  width="300" height="500">
+      </div>
+      <div class="col">
+        <img src="data:image/png;base64, {{ plt|safe}}">
+      </div>
       </div>
       {% endif %}
       
