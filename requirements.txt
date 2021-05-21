@@ -29,4 +29,3 @@ threadpoolctl==2.1.0
 toml==0.10.2
 wincertstore==0.2
 wrapt==1.12.1
-opencv-python-headless==4.2.0.32
