@@ -91,3 +91,5 @@ def output(request):
 
         print(skinTone)
         return render(request, 'skin_tone/output.html', {'img':img, 'skinTone':skinTone, 'plt':plt})
+
+
